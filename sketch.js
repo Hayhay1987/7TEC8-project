@@ -22,8 +22,12 @@ var instructions = "drag your mouse to move the knife and chop the carrots. when
 
 function preload() {
     chopsound = loadSound("chop.mp3")
+	chopsound.volume = 0.2
     movesound = loadSound("moving.mp3")
+	movesound.volume = 0.2
     popsound = loadSound("pop.mp3")
+	popsound.volume = 0.2
+	
 }
 
 function setup() {
