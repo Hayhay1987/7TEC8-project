@@ -19,6 +19,13 @@ var bonus
 var time
 var instructions = "drag your mouse to move the knife and chop the carrots. when all carrots are chopped, carrots are placed into soup."
 
+
+function preload() {
+    chopsound = loadSound("chop.mp3")
+    movesound = loadSound("moving.mp3")
+    popsound = loadSound("pop.mp3")
+}
+
 function setup() {
 	//@ts-ignore
     new Canvas(1440, 773);
@@ -37,9 +44,6 @@ function setup() {
     knife = new Sprite(100, 100, 803, 360)
     knife.image = loadImage("knife.jpg")
     knife.scale = 0.1
-    chopsound = loadSound("chop.mp3")
-    movesound = loadSound("moving.mp3")
-    popsound = loadSound("pop.mp3")
     bonus = 4
     spawns = Math.floor(random() * 6) + bonus + 2
     minispawns = Math.floor(random() * 4) + bonus
