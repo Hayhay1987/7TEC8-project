@@ -56,6 +56,7 @@ function setup() {
     time = 0
 }
 function draw() {
+	frameRate(60)
 	chopsound = loadSound("chop.mp3")
     movesound = loadSound("moving.mp3")
     popsound = loadSound("pop.mp3")
