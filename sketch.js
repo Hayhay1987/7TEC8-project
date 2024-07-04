@@ -52,6 +52,9 @@ function setup() {
     time = 0
 }
 function draw() {
+	chopsound = loadSound("chop.mp3")
+    movesound = loadSound("moving.mp3")
+    popsound = loadSound("pop.mp3")
     frameRate(30)
     if (time >= 30 && (carrots + chops*2)/time < 10) {
         instructions = "you've been fired!"
