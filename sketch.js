@@ -20,11 +20,14 @@ var time
 var instructions = "drag your mouse to move the knife and chop the carrots. when all carrots are chopped, carrots are placed into soup."
 
 
-
-function setup() {
+function preload() {
     chopsound = loadSound("chop.mp3")
     movesound = loadSound("moving.mp3")
     popsound = loadSound("pop.mp3")
+}
+
+
+function setup() {
 	//@ts-ignore
     new Canvas(1440, 773);
 	world.gravity = {x: 0, y:10}
@@ -55,7 +58,7 @@ function draw() {
         allSprites.forEach(s => s.remove())
     }
     else if (!backing) {
-        time += frameRate() /60 /60
+        time += 1/frameRate()
     }
     bonus = 2
     frameRate(60)
