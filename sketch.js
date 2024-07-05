@@ -50,13 +50,12 @@ function setup() {
     time = 0
 }
 function draw() {
-    frameRate(30)
     if (time >= 30 && (carrots + chops*2)/time < 10) {
         instructions = "you've been fired!"
         allSprites.forEach(s => s.remove())
     }
     else if (!backing) {
-        time += 1/60
+        time += frameRate() /60 /60
     }
     bonus = 2
     frameRate(60)
