@@ -11,26 +11,20 @@ var movesound
 var popsound
 var carrots = 0
 var chops = 0
-var spawns = floor(random() * 9) + 3
-var minispawns = floor(random() * 4) + 2
-var miniminispawns = floor(random() * 4) + 2
+var spawns
+var minispawns
+var miniminispawns
 var green = 0
 var bonus
 var time
 var instructions = "drag your mouse to move the knife and chop the carrots. when all carrots are chopped, carrots are placed into soup."
 
 
-function preload() {
-    chopsound = loadSound("chop.mp3")
-	chopsound.volume = 0.2
-    movesound = loadSound("moving.mp3")
-	movesound.volume = 0.2
-    popsound = loadSound("pop.mp3")
-	popsound.volume = 0.2
-	
-}
 
 function setup() {
+    chopsound = loadSound("chop.mp3")
+    movesound = loadSound("moving.mp3")
+    popsound = loadSound("pop.mp3")
 	//@ts-ignore
     new Canvas(1440, 773);
 	world.gravity = {x: 0, y:10}
@@ -57,9 +51,6 @@ function setup() {
 }
 function draw() {
 	frameRate(60)
-	chopsound = loadSound("chop.mp3")
-    movesound = loadSound("moving.mp3")
-    popsound = loadSound("pop.mp3")
     frameRate(30)
     if (time >= 30 && (carrots + chops*2)/time < 10) {
         instructions = "you've been fired!"
