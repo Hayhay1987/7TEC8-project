@@ -50,7 +50,6 @@ function setup() {
     time = 0
 }
 function draw() {
-	frameRate(60)
     frameRate(30)
     if (time >= 30 && (carrots + chops*2)/time < 10) {
         instructions = "you've been fired!"
